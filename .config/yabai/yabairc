@@ -1,11 +1,11 @@
 #!/usr/bin/env sh
 
 yabai -m config layout bsp
-yabai -m config window_gap 25
+yabai -m config window_gap 12
 yabai -m config top_padding 12
-yabai -m config bottom_padding 25
-yabai -m config left_padding 25
-yabai -m config right_padding 25
+yabai -m config bottom_padding 12
+yabai -m config left_padding 12
+yabai -m config right_padding 12
 
 yabai -m config mouse_follows_focus on
 yabai -m config focus_follows_mouse autoraise
@@ -27,8 +27,3 @@ yabai -m rule --add app="Finder" manage=off
 yabai -m rule --add app="Calculator" manage=off
 yabai -m rule --add app="Activity Monitor" manage=off
 
-# SketchyBar integration
-yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
-yabai -m signal --add event=window_focused action="sketchybar --trigger window_focus"
-yabai -m signal --add event=window_created action="sketchybar --trigger windows_on_spaces"
-yabai -m signal --add event=window_destroyed action="sketchybar --trigger windows_on_spaces"
