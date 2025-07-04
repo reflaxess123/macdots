@@ -63,3 +63,16 @@ ctrl + cmd - r : yabai --restart-service; skhd --restart-service
 # Скриншот (если установлен shottr или подобное)
 ctrl + cmd - s : screencapture -i ~/Desktop/screenshot.png
 
+# Дополнительные горячие клавиши для работы с окнами
+# Полноэкранный режим
+cmd + shift - f : yabai -m window --toggle zoom-fullscreen
+
+# Переключение между tiling и floating
+cmd + shift - space : yabai -m window --toggle float
+
+# Поворот окон
+cmd + shift - r : yabai -m space --rotate 90
+
+# Балансировка окон
+cmd + shift - b : yabai -m space --balance
+

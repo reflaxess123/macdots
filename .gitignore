@@ -12,8 +12,6 @@
 !.config/skhd/**
 !.config/yabai/
 !.config/yabai/**
-!.config/sketchybar/
-!.config/sketchybar/**
 
 # Ignore common system files
 .DS_Store
