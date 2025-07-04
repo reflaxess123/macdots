@@ -1,0 +1,102 @@
+#!/bin/bash
+
+# Улучшенная конфигурация SketchyBar
+
+PLUGIN_DIR="$CONFIG_DIR/plugins"
+
+##### Bar Appearance #####
+# Более высокий бар во всю ширину без закруглений
+sketchybar --bar position=top height=35 blur_radius=20 color=0x80000000 \
+                 margin=0 corner_radius=0 shadow=off
+
+##### Defaults #####
+default=(
+  padding_left=10
+  padding_right=10
+  icon.font="SF Pro:Medium:18.0"
+  label.font="Roboto:Medium:17.0"
+  icon.color=0xffffffff
+  label.color=0xffffffff
+  icon.padding_left=8
+  icon.padding_right=8
+  label.padding_left=8
+  label.padding_right=8
+  background.drawing=off
+)
+sketchybar --default "${default[@]}"
+
+##### Левая сторона - Датчики #####
+sketchybar --add item cpu left \
+           --set cpu update_freq=5 \
+                 icon="󰘚" \
+                 script="$PLUGIN_DIR/cpu.sh" \
+                 click_script="$PLUGIN_DIR/cpu_popup.sh"
+
+sketchybar --add item memory left \
+           --set memory update_freq=5 \
+                       icon="󰍛" \
+                       script="$PLUGIN_DIR/memory.sh" \
+                       click_script="$PLUGIN_DIR/memory_popup.sh"
+
+sketchybar --add item disk left \
+           --set disk update_freq=30 \
+                     icon="󰋊" \
+                     script="$PLUGIN_DIR/disk.sh" \
+                     click_script="$PLUGIN_DIR/disk_popup.sh"
+
+sketchybar --add item network left \
+           --set network update_freq=10 \
+                        icon="󰤨" \
+                        script="$PLUGIN_DIR/wifi.sh"
+
+sketchybar --add item front_app_left left \
+           --set front_app_left icon.drawing=off \
+                               script="$PLUGIN_DIR/front_app.sh" \
+                               label.padding_left=15 \
+                               label.padding_right=15 \
+           --subscribe front_app_left front_app_switched
+
+##### Центр - Рабочие столы #####
+SPACE_NUMBERS=("1" "2" "3" "4" "5" "6" "7" "8" "9" "10")
+for i in "${!SPACE_NUMBERS[@]}"
+do
+  sid="$(($i+1))"
+  space=(
+    space="$sid"
+    icon="${SPACE_NUMBERS[i]}"
+    icon.padding_left=3
+    icon.padding_right=3
+    icon.font="SF Pro:Medium:18.0"
+    label.drawing=off
+    script="$PLUGIN_DIR/space.sh"
+    click_script="yabai -m space --focus $sid"
+  )
+  sketchybar --add space space."$sid" center --set space."$sid" "${space[@]}"
+done
+
+
+##### Правая сторона - Системная информация #####
+sketchybar --add item volume right \
+           --set volume script="$PLUGIN_DIR/volume.sh" \
+                       icon="󰕾" \
+           --subscribe volume volume_change
+
+sketchybar --add item battery right \
+           --set battery update_freq=30 \
+                        icon="󰁹" \
+                        script="$PLUGIN_DIR/battery.sh" \
+           --subscribe battery system_woke power_source_change
+
+sketchybar --add item clock right \
+           --set clock update_freq=10 \
+                      icon="󰃭" \
+                      script="$PLUGIN_DIR/clock.sh"
+
+##### Event Subscriptions #####
+sketchybar --add event window_focus
+sketchybar --add event windows_on_spaces
+
+##### Force all scripts to run #####
+sketchybar --update
+
+echo "SketchyBar configuration loaded"
