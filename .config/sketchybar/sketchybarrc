@@ -17,10 +17,10 @@ default=(
   label.font="Roboto:Medium:17.0"
   icon.color=0xffffffff
   label.color=0xffffffff
-  icon.padding_left=8
-  icon.padding_right=8
-  label.padding_left=8
-  label.padding_right=8
+  icon.padding_left=2
+  icon.padding_right=2
+  label.padding_left=2
+  label.padding_right=2
   background.drawing=off
 )
 sketchybar --default "${default[@]}"
@@ -50,7 +50,7 @@ sketchybar --add item network left \
                         script="$PLUGIN_DIR/wifi.sh"
 
 sketchybar --add item front_app_left left \
-           --set front_app_left icon.drawing=off \
+           --set front_app_left icon="󰣇" \
                                script="$PLUGIN_DIR/front_app.sh" \
                                label.padding_left=15 \
                                label.padding_right=15 \
@@ -64,8 +64,8 @@ do
   space=(
     space="$sid"
     icon="${SPACE_NUMBERS[i]}"
-    icon.padding_left=3
-    icon.padding_right=3
+    icon.padding_left=0
+    icon.padding_right=0
     icon.font="SF Pro:Medium:18.0"
     label.drawing=off
     script="$PLUGIN_DIR/space.sh"
@@ -76,6 +76,12 @@ done
 
 
 ##### Правая сторона - Системная информация #####
+##### Часы в самом правом углу #####
+sketchybar --add item clock right \
+           --set clock update_freq=10 \
+                      icon="󰃭" \
+                      script="$PLUGIN_DIR/clock.sh"
+
 sketchybar --add item volume right \
            --set volume script="$PLUGIN_DIR/volume.sh" \
                        icon="󰕾" \
@@ -86,11 +92,6 @@ sketchybar --add item battery right \
                         icon="󰁹" \
                         script="$PLUGIN_DIR/battery.sh" \
            --subscribe battery system_woke power_source_change
-
-sketchybar --add item clock right \
-           --set clock update_freq=10 \
-                      icon="󰃭" \
-                      script="$PLUGIN_DIR/clock.sh"
 
 ##### Event Subscriptions #####
 sketchybar --add event window_focus
