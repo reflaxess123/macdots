@@ -6,16 +6,21 @@ font-size = 20
 
 # ╭─ ВНЕШНИЙ ВИД ─────────────────────────────────────╮
 # Прозрачность
-background-opacity = 0.4
+background-opacity = 0.8
 background-blur-radius = 200
+
+
+# Размер окна в терминальных ячейках
+window-width = 200
+window-height = 40
+
+# Позиция окна (в пикселях)
+window-position-x = 480
+window-position-y = 120
 
 # Отступы
 window-padding-x = 15
 window-padding-y = 15
-
-# Размер окна
-window-width = 1200
-window-height = 750
 
 # Отключить декорации
 window-decoration = false
