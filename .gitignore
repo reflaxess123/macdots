@@ -1,0 +1,28 @@
+# Ignore everything by default
+*
+
+# But don't ignore these directories and files
+!.gitignore
+!.zshrc
+!.tmux.conf
+!.config/
+!.config/ghostty/
+!.config/ghostty/**
+!.config/skhd/
+!.config/skhd/**
+!.config/yabai/
+!.config/yabai/**
+
+# Ignore common system files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Ignore logs and temporary files
+*.log
+*.tmp
+*.temp
