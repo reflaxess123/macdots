@@ -1,0 +1,122 @@
+# Custom tmux configuration
+# Change prefix from C-b to C-a
+set -g prefix C-a
+unbind C-b
+bind C-a send-prefix
+
+# Basic settings
+set -g mouse on
+set -g base-index 1
+setw -g pane-base-index 1
+set -g renumber-windows on
+set -g default-terminal "screen-256color"
+set -ga terminal-overrides ",*256col*:Tc"
+
+# History
+set -g history-limit 10000
+
+# Escape time
+set -sg escape-time 0
+
+# Reload config
+bind r source-file ~/.tmux.conf \; display "Config reloaded!"
+
+# Navigation between panes within a window/tab
+bind -r Left select-pane -L
+bind -r Down select-pane -D
+bind -r Up select-pane -U
+bind -r Right select-pane -R
+
+# Alternative pane navigation removed (vim-style disabled)
+
+# Resizing with Shift+arrow keys
+bind -r S-Left resize-pane -L 5
+bind -r S-Down resize-pane -D 5
+bind -r S-Up resize-pane -U 5
+bind -r S-Right resize-pane -R 5
+
+# Navigation between windows/tabs
+bind -r C-Left previous-window
+bind -r C-Right next-window
+
+# Prefix + PageUp/PageDown for tab switching
+bind -r PPage previous-window
+bind -r NPage next-window
+
+# Quick window switching by F-keys (no prefix needed)
+bind -n F1 select-window -t 1
+bind -n F2 select-window -t 2
+bind -n F3 select-window -t 3
+bind -n F4 select-window -t 4
+bind -n F5 select-window -t 5
+bind -n F6 select-window -t 6
+bind -n F7 select-window -t 7
+bind -n F8 select-window -t 8
+bind -n F9 select-window -t 9
+bind -n F10 select-window -t 10
+
+# Simple left/right navigation without prefix
+bind -n S-Left previous-window
+bind -n S-Right next-window
+
+# Ctrl+PageUp/PageDown for tab switching (no prefix needed)
+bind -n C-PPage previous-window
+bind -n C-NPage next-window
+
+# Quick window switching by number (with prefix)
+bind 1 select-window -t 1
+bind 2 select-window -t 2
+bind 3 select-window -t 3
+bind 4 select-window -t 4
+bind 5 select-window -t 5
+bind 6 select-window -t 6
+bind 7 select-window -t 7
+bind 8 select-window -t 8
+bind 9 select-window -t 9
+bind 0 select-window -t 10
+
+# Window creation
+bind c new-window -c "#{pane_current_path}"
+bind '"' split-window -c "#{pane_current_path}"
+bind % split-window -h -c "#{pane_current_path}"
+
+# Copy mode (vim-style disabled)
+setw -g mode-keys emacs
+bind [ copy-mode
+
+# Status bar design
+set -g status-position bottom
+set -g status-justify centre
+set -g status-style bg=colour16,fg=colour255
+set -g status-left-length 60
+set -g status-right-length 60
+
+# Window tabs design - more beautiful
+setw -g window-status-current-style fg=colour16,bg=colour39,bold
+setw -g window-status-current-format ' #I: #W '
+
+setw -g window-status-style fg=colour245,bg=colour238,none
+setw -g window-status-format ' #I: #W '
+
+# Separator between windows
+setw -g window-status-separator ''
+
+# Pane borders
+set -g pane-border-style fg=colour238
+set -g pane-active-border-style fg=colour39
+
+# Status left and right with better design and prefix indicator
+set -g status-left '#[fg=colour16,bg=colour154,bold] #S #[fg=colour154,bg=colour238]#[fg=colour255,bg=colour238] #(whoami) #[fg=colour238,bg=colour16]'
+set -g status-right '#{?client_prefix,#[fg=colour16]#[bg=colour196]#[bold] PREFIX #[fg=colour196]#[bg=colour16] ,}#[fg=colour238,bg=colour16]#[fg=colour255,bg=colour238] %d/%m %H:%M #[fg=colour154,bg=colour238]#[fg=colour16,bg=colour154,bold] #h '
+
+# Message style
+set -g message-style bg=colour166,fg=colour232
+set -g message-command-style bg=colour166,fg=colour232
+
+# Bell
+set -g bell-action none
+set -g visual-bell off
+
+# Activity monitoring
+setw -g monitor-activity on
+set -g visual-activity off

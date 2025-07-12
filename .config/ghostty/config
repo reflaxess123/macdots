@@ -2,13 +2,12 @@
 
 # ╭─ ШРИФТЫ ──────────────────────────────────────────╮
 font-family = "JetBrainsMono Nerd Font"
-font-size = 16
+font-size = 20
 
 # ╭─ ВНЕШНИЙ ВИД ─────────────────────────────────────╮
 # Прозрачность
 background-opacity = 0.8
-background-blur-radius = 250
-
+background-blur-radius = 200
 
 # Размер окна в терминальных ячейках
 window-width = 200
@@ -22,8 +21,7 @@ window-position-y = 120
 window-padding-x = 15
 window-padding-y = 15
 
-# Отключить декорации
-# window-decoration = false
+window-decoration = false
 
 # ╭─ ЦВЕТА - CATPPUCCIN MOCHA ENHANCED ──────────────╮
 # Основные цвета

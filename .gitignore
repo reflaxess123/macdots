@@ -25,4 +25,8 @@ Thumbs.db
 # Ignore logs and temporary files
 *.log
 *.tmp
+<<<<<<< HEAD
 *.temp
+=======
+*.temp
+>>>>>>> origin/main
