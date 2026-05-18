@@ -7,9 +7,11 @@
 #   defaults write org.alacritty NSQuitAlwaysKeepsWindows -bool true
 # (выполнено install.sh; делает то же что и системный «Restore windows»).
 
-# ── Темы (catppuccin-mocha из themes/) ──────────────────────────────────────
+# ── Темы (xdr-black: чёрный фон, как Ghostty/XDRBlack) ──────────────────────
+# Чтобы переключиться на Catppuccin Mocha (синевато-серый фон) — поменяй
+# import на themes/catppuccin-mocha.toml.
 [general]
-import = ["~/.config/alacritty/themes/catppuccin-mocha.toml"]
+import = ["~/.config/alacritty/themes/xdr-black.toml"]
 live_config_reload = true
 
 # ── Шрифт ───────────────────────────────────────────────────────────────────
