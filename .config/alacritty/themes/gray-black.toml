@@ -2,11 +2,11 @@
 # Серо-чёрный фон без синего оттенка.
 
 [colors.primary]
-background = "#0a0a0a"
+background = "#050505"
 foreground = "#e6e6e6"
 
 [colors.cursor]
-text   = "#0a0a0a"
+text   = "#050505"
 cursor = "#f6c177"
 
 [colors.selection]

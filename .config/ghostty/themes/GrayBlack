@@ -1,6 +1,6 @@
 # Gray-Black theme — серо-чёрный фон без синего оттенка.
 # Совпадает с Alacritty/themes/gray-black.toml.
-background = #0a0a0a
+background = #050505
 foreground = #e6e6e6
 
 cursor-color = #f6c177
