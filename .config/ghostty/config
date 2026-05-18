@@ -4,8 +4,9 @@
 # Темы (кастомные, лежат в ~/.config/ghostty/themes/)
 # ===========================
 # Автопереключение по системному режиму macOS.
-#   Light -> LightWhite, Dark -> XDRBlack
-theme = light:LightWhite,dark:XDRBlack
+#   Light -> LightWhite, Dark -> GrayBlack (#0a0a0a, как Alacritty)
+# Для настоящего true black на XDR заменишь на dark:XDRBlack.
+theme = light:LightWhite,dark:GrayBlack
 
 # ===========================
 # Шрифт
@@ -14,12 +15,11 @@ font-family = JetBrainsMonoNL Nerd Font
 font-size = 18
 
 # ===========================
-# Фон: прозрачность + блюр.
-# Компромисс: при opacity < 1.0 XDR true-black не работает (пиксели не гаснут
-# до настоящего чёрного). Чтобы вернуть true black — поставь opacity = 1.0
-# и закомментируй background-blur-radius.
+# Фон: прозрачность + блюр (паритет с Alacritty).
+# При opacity < 1.0 XDR true-black не работает; если переключишься на XDRBlack
+# и захочешь чтобы пиксели реально гасились — поставь opacity = 1.0 и убери блюр.
 # ===========================
-background-opacity = 0.85
+background-opacity = 0.75
 background-blur-radius = 20
 
 # ===========================
