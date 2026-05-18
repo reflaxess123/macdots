@@ -8,6 +8,7 @@ brew "tmux"
 # Shell tools the .zshrc and tmux random-name script rely on
 brew "bat"
 brew "eza"
+brew "zoxide"
 brew "fd"
 brew "fzf"
 brew "ripgrep"
