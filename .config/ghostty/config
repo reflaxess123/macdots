@@ -42,7 +42,7 @@ window-save-state = always
 # Сглаживание скролла:
 #   precision — для трекпада (дефолт 1)
 #   discrete  — для колеса мыши (дефолт 3, отсюда «рывки» по 3 строки)
-mouse-scroll-multiplier = precision:0.4,discrete:1
+mouse-scroll-multiplier = precision:0.3,discrete:1
 
 # ===========================
 # Старая тема (на всякий случай — раскомментируй, если захочешь вернуть)
