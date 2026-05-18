@@ -1,0 +1,10 @@
+{
+  "statusLine": {
+    "type": "command",
+    "command": "node /Users/billy/.claude/statusline.js"
+  },
+  "effortLevel": "xhigh",
+  "skipDangerousModePermissionPrompt": true,
+  "theme": "auto",
+  "terminalProgressBarEnabled": false
+}

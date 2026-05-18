@@ -5,6 +5,9 @@
 !.gitignore
 !.zshrc
 !.tmux.conf
+!.hushlogin
+!.claude/
+!.claude/settings.json
 !.config/
 !.config/ghostty/
 !.config/ghostty/**
