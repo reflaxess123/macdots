@@ -7,11 +7,12 @@
 #   defaults write org.alacritty NSQuitAlwaysKeepsWindows -bool true
 # (выполнено install.sh; делает то же что и системный «Restore windows»).
 
-# ── Темы (xdr-black: чёрный фон, как Ghostty/XDRBlack) ──────────────────────
-# Чтобы переключиться на Catppuccin Mocha (синевато-серый фон) — поменяй
-# import на themes/catppuccin-mocha.toml.
+# ── Темы (gray-black: серо-чёрный #1a1a1a, как Ghostty/GrayBlack) ───────────
+# Альтернативы в themes/:
+#   xdr-black.toml         — чистый #000000 (XDR / OLED true black)
+#   catppuccin-mocha.toml  — синевато-серая Catppuccin палитра
 [general]
-import = ["~/.config/alacritty/themes/xdr-black.toml"]
+import = ["~/.config/alacritty/themes/gray-black.toml"]
 live_config_reload = true
 
 # ── Шрифт ───────────────────────────────────────────────────────────────────
@@ -36,8 +37,7 @@ style  = "Bold Italic"
 
 # ── Окно ────────────────────────────────────────────────────────────────────
 [window]
-# 0.85 opacity + blur = такой же стеклянный вид как у Ghostty.
-opacity = 0.85
+opacity = 0.75
 blur    = true
 
 # Скрыть тёмную полосу заголовка; "buttonless" оставляет окно перетаскиваемым
