@@ -7,7 +7,10 @@
 !.tmux.conf
 !.hushlogin
 !.claude/
-!.claude/settings.json
+!.claude/**
+!Brewfile
+!install.sh
+!README.md
 !.config/
 !.config/ghostty/
 !.config/ghostty/**
