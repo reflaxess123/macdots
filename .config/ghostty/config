@@ -1,110 +1,67 @@
-# ╭─ GHOSTTY CONFIG - СОЧНЫЙ КОНФИГ ──────────────────╮
+# Ghostty config — единственный, чтобы macOS не пугался Application Support.
 
-# ╭─ ШРИФТЫ ──────────────────────────────────────────╮
-font-family = "JetBrainsMono Nerd Font"
-font-size = 20
+# ===========================
+# Темы (кастомные, лежат в ~/.config/ghostty/themes/)
+# ===========================
+# Автопереключение по системному режиму macOS.
+#   Light -> LightWhite, Dark -> XDRBlack
+theme = light:LightWhite,dark:XDRBlack
 
-# ╭─ ВНЕШНИЙ ВИД ─────────────────────────────────────╮
-# Прозрачность
-background-opacity = 0.8
-background-blur-radius = 200
+# ===========================
+# Шрифт
+# ===========================
+font-family = JetBrainsMono Nerd Font
+font-size = 18
 
-# Размер окна в терминальных ячейках
-window-width = 200
-window-height = 40
+# ===========================
+# Фон: прозрачность + блюр.
+# Компромисс: при opacity < 1.0 XDR true-black не работает (пиксели не гаснут
+# до настоящего чёрного). Чтобы вернуть true black — поставь opacity = 1.0
+# и закомментируй background-blur-radius.
+# ===========================
+background-opacity = 0.85
+background-blur-radius = 20
 
-# Позиция окна (в пикселях)
-window-position-x = 480
-window-position-y = 120
-
-# Отступы
-window-padding-x = 15
-window-padding-y = 15
-
-window-decoration = false
-
-# ╭─ ЦВЕТА - CATPPUCCIN MOCHA ENHANCED ──────────────╮
-# Основные цвета
-foreground = cdd6f4
-background = 0d1117
-selection-foreground = 0d1117
-selection-background = 89b4fa
-
-# Курсор
-cursor-color = f5c2e7
-
-# ANSI цвета
-palette = 0=313244
-palette = 1=f38ba8
-palette = 2=a6e3a1
-palette = 3=f9e2af
-palette = 4=89b4fa
-palette = 5=f5c2e7
-palette = 6=94e2d5
-palette = 7=bac2de
-palette = 8=45475a
-palette = 9=ff7eb6
-palette = 10=b8f5b2
-palette = 11=ffef9f
-palette = 12=96c8ff
-palette = 13=ffb3f0
-palette = 14=a8f0e6
-palette = 15=cdd6f4
-
-# ╭─ СКРОЛЛИНГ ───────────────────────────────────────╮
-scrollback-limit = 50000
-
-# ╭─ КОЛОКОЛЬЧИК ─────────────────────────────────────╮
-# audio-bell option doesn't exist in Ghostty - removing
-
-# ╭─ ГОРЯЧИЕ КЛАВИШИ ────────────────────────────────╮
-# Основные
-keybind = cmd+c=copy_to_clipboard
-keybind = cmd+v=paste_from_clipboard
-keybind = cmd+n=new_window
-keybind = cmd+t=new_tab
-keybind = cmd+w=close_surface
-keybind = cmd+shift+w=close_window
-
-# Навигация по табам
-keybind = cmd+1=goto_tab:1
-keybind = cmd+2=goto_tab:2
-keybind = cmd+3=goto_tab:3
-keybind = cmd+4=goto_tab:4
-keybind = cmd+5=goto_tab:5
-keybind = cmd+6=goto_tab:6
-keybind = cmd+7=goto_tab:7
-keybind = cmd+8=goto_tab:8
-keybind = cmd+9=goto_tab:9
-
-# Размер шрифта
-keybind = cmd+plus=increase_font_size:2
-keybind = cmd+minus=decrease_font_size:2
-keybind = cmd+0=reset_font_size
-
-# Прозрачность - нет встроенной команды для изменения прозрачности
-# keybind = cmd+shift+plus=adjust_background_opacity:0.1
-# keybind = cmd+shift+minus=adjust_background_opacity:-0.1
-
-# Скролл
-keybind = cmd+shift+up=scroll_page_up
-keybind = cmd+shift+down=scroll_page_down
-keybind = cmd+shift+home=scroll_to_top
-keybind = cmd+shift+end=scroll_to_bottom
-
-# Полноэкранный режим
-keybind = cmd+enter=toggle_fullscreen
-
-# ╭─ МЫШЬ ────────────────────────────────────────────╮
-mouse-hide-while-typing = true
-
-# ╭─ ДОПОЛНИТЕЛЬНЫЕ НАСТРОЙКИ ───────────────────────╮
-# Подтверждение закрытия
+# ===========================
+# Окно
+# ===========================
+window-padding-x = 24
+window-padding-y = 12
+window-padding-balance = true
+window-width = 160
+window-height = 50
 confirm-close-surface = false
 
-# Интеграция с системой
-macos-option-as-alt = left
+# Скрыть верхнюю панель (titlebar). Окно перетаскивается за любую часть,
+# трафик-лайты прячутся вместе с панелью.
 macos-titlebar-style = hidden
 
-# Обработка URL
-auto-update = off
+# Запоминать размер и позицию окна между запусками.
+window-save-state = always
+
+# ===========================
+# Старая тема (на всякий случай — раскомментируй, если захочешь вернуть)
+# 🌊 Midnight Ocean — синеватый фон
+# ===========================
+# background = #1a1b2e
+# foreground = #e0def4
+# cursor-color = #f6c177
+# cursor-style = block
+# selection-background = #393552
+# selection-foreground = #e0def4
+# palette = 0=#26233a
+# palette = 1=#eb6f92
+# palette = 2=#9ccfd8
+# palette = 3=#f6c177
+# palette = 4=#c4a7e7
+# palette = 5=#ea9a97
+# palette = 6=#3e8fb0
+# palette = 7=#e0def4
+# palette = 8=#6e6a86
+# palette = 9=#eb6f92
+# palette = 10=#9ccfd8
+# palette = 11=#f6c177
+# palette = 12=#c4a7e7
+# palette = 13=#ea9a97
+# palette = 14=#3e8fb0
+# palette = 15=#e0def4
