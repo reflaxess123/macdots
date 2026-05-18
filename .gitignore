@@ -8,6 +8,8 @@
 !.config/
 !.config/ghostty/
 !.config/ghostty/**
+!.config/tmux/
+!.config/tmux/**
 !.config/skhd/
 !.config/skhd/**
 !.config/yabai/
