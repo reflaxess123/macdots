@@ -1,0 +1,73 @@
+# Alacritty config — параллель Ghostty.
+# Бэкенд: brew install --cask alacritty.
+#
+# Внимание: Alacritty НЕ умеет «window-save-state = always» как Ghostty.
+# Окно открывается каждый раз с window.dimensions/position ниже.
+# Чтобы macOS сам сохранял/восстанавливал окно при cmd+Q → cmd+Space → Alacritty:
+#   defaults write org.alacritty NSQuitAlwaysKeepsWindows -bool true
+# (выполнено install.sh; делает то же что и системный «Restore windows»).
+
+# ── Темы (catppuccin-mocha из themes/) ──────────────────────────────────────
+[general]
+import = ["~/.config/alacritty/themes/catppuccin-mocha.toml"]
+live_config_reload = true
+
+# ── Шрифт ───────────────────────────────────────────────────────────────────
+[font]
+size = 18.0
+
+[font.normal]
+family = "JetBrainsMonoNL Nerd Font"
+style  = "Regular"
+
+[font.bold]
+family = "JetBrainsMonoNL Nerd Font"
+style  = "Bold"
+
+[font.italic]
+family = "JetBrainsMonoNL Nerd Font"
+style  = "Italic"
+
+[font.bold_italic]
+family = "JetBrainsMonoNL Nerd Font"
+style  = "Bold Italic"
+
+# ── Окно ────────────────────────────────────────────────────────────────────
+[window]
+# 0.85 opacity + blur = такой же стеклянный вид как у Ghostty.
+opacity = 0.85
+blur    = true
+
+# Скрыть тёмную полосу заголовка; "buttonless" оставляет окно перетаскиваемым
+# за верхнюю кромку, но прячет трафик-лайты.
+decorations = "Buttonless"
+
+# Стартовый размер. Alacritty не запоминает прошлый размер сам — это и есть
+# тот размер, с которого откроется окно. Подгони под себя.
+dimensions = { columns = 160, lines = 50 }
+
+# Падинги (в пикселях). Соответствуют Ghostty: window-padding-x=24, y=12.
+padding = { x = 24, y = 12 }
+dynamic_padding = true
+
+# Заполнить пиксели снизу/сбоку фоном (вместо «дыр» между cells при дробном
+# размере окна).
+option_as_alt = "OnlyLeft"
+
+# ── Скроллбэк ───────────────────────────────────────────────────────────────
+[scrolling]
+history    = 50000
+multiplier = 3
+
+# ── Мышь ────────────────────────────────────────────────────────────────────
+[mouse]
+hide_when_typing = true
+
+# ── Курсор ──────────────────────────────────────────────────────────────────
+[cursor]
+style = { shape = "Block", blinking = "Off" }
+
+# ── Прочее ──────────────────────────────────────────────────────────────────
+[bell]
+animation = "EaseOutExpo"
+duration  = 0

@@ -17,6 +17,7 @@ backed up as `*.bak-<timestamp>` before being replaced by symlinks.
 | Path | What |
 |---|---|
 | `.config/ghostty/` | Ghostty terminal config + custom themes (LightWhite / GrayBlack / XDRBlack) |
+| `.config/alacritty/` | Alacritty terminal config + Catppuccin Mocha theme (parallel to Ghostty) |
 | `.config/tmux/` | Random window/session name pool + picker script |
 | `.tmux.conf` | Tmux: Catppuccin Mocha, rounded segments on transparent bar, prefix=C-a |
 | `.claude/settings.json` | Claude Code config (effortLevel, statusLine, terminalProgressBar=off) |

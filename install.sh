@@ -82,10 +82,14 @@ link .tmux.conf
 link .hushlogin
 link .config/tmux
 link .config/ghostty
+link .config/alacritty
 link .claude/settings.json
 link .claude/statusline.js
 link .claude/statusline.sh
 link .claude/statusline-command.sh
+
+# Alacritty не умеет save-window-state сам — пусть macOS делает это за него.
+defaults write org.alacritty NSQuitAlwaysKeepsWindows -bool true 2>/dev/null || true
 
 # ── 4. Manual reminders ─────────────────────────────────────────────────────
 cat <<EOF

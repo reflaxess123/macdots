@@ -3,6 +3,7 @@
 
 # Terminal & multiplexer
 cask "ghostty"
+cask "alacritty"
 brew "tmux"
 
 # Shell tools the .zshrc and tmux random-name script rely on
