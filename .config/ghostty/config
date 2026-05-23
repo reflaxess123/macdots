@@ -3,16 +3,15 @@
 # ===========================
 # Темы (кастомные, лежат в ~/.config/ghostty/themes/)
 # ===========================
-# Автопереключение по системному режиму macOS.
-#   Light -> LightWhite, Dark -> GrayBlack (#0a0a0a, как Alacritty)
-# Для настоящего true black на XDR заменишь на dark:XDRBlack.
-theme = light:LightWhite,dark:GrayBlack
+# Всегда чёрная тема — без переключения по системному режиму macOS.
+# Для настоящего true black на XDR заменишь на XDRBlack (нужен opacity = 1.0).
+theme = GrayBlack
 
 # ===========================
 # Шрифт
 # ===========================
 font-family = JetBrainsMonoNL Nerd Font
-font-size = 18
+font-size = 16
 
 # ===========================
 # Фон: прозрачность + блюр (паритет с Alacritty).
@@ -32,9 +31,12 @@ window-width = 160
 window-height = 50
 confirm-close-surface = false
 
-# Скрыть верхнюю панель (titlebar). Окно перетаскивается за любую часть,
-# трафик-лайты прячутся вместе с панелью.
-macos-titlebar-style = hidden
+# Нативный macOS titlebar: AppKit сам прячет tab bar при одной вкладке
+# и показывает при двух и более. В fullscreen титульная полоса
+# скрывается системой — никакого «всратого» хедера сверху не будет.
+# Альтернативы: `tabs` (интегрированные табы, всегда видны),
+#               `transparent`, `hidden`.
+macos-titlebar-style = native
 
 # Запоминать размер и позицию окна между запусками.
 window-save-state = always

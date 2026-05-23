@@ -126,14 +126,18 @@ esac
 export PATH="/Users/billy/.antigravity/antigravity/bin:$PATH"
 
 claude-proxy() {
-  if ! pgrep -x gost > /dev/null; then
-      gost -L http://127.0.0.1:1080 -F http://TDqQscUmhcHnreW:gLlJpkf8tppVqAZ@46.151.225.1:46676 > /dev/null 2>&1 &
-    sleep 1
-    echo "gost запущен"
-  else
-    echo "gost уже работает"
-  fi
-  export HTTP_PROXY=http://127.0.0.1:1080
-  export HTTPS_PROXY=http://127.0.0.1:1080
+  export http_proxy=http://91.201.114.192:3128
+  export https_proxy=http://91.201.114.192:3128
+  export HTTP_PROXY=http://91.201.114.192:3128
+  export HTTPS_PROXY=http://91.201.114.192:3128
+  echo "Proxy set to 91.201.114.192:3128"
+  claude "$@"
 }
 
+
+# opencode
+export PATH=/Users/billy/.opencode/bin:$PATH
+
+
+# Added by Antigravity CLI installer
+export PATH="/Users/billy/.local/bin:$PATH"

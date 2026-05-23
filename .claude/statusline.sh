@@ -46,7 +46,7 @@ ctx_size=$(echo "$input" | jq -r '.context_window.context_window_size // 0')
 
 model_segment=""
 if [ -n "$model" ]; then
-  model_segment="🤖 ${model}"
+  model_segment="👾 ${model}"
   [ -n "$effort" ]   && model_segment="${model_segment} ${effort}"
   [ -n "$style" ]    && model_segment="${model_segment} ${style}"
 
@@ -188,7 +188,7 @@ fi
 
 # ── Assemble ─────────────────────────────────────────────────────────────────
 parts=()
-parts+=("📁 ${dir_name}")
+parts+=("🗂️ ${dir_name}")
 [ -n "$git_segment" ]   && parts+=("$git_segment")
 [ -n "$model_segment" ] && parts+=("$model_segment")
 parts+=("$five_segment")
