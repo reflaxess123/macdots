@@ -1,29 +1,18 @@
-# Ghostty config — единственный, чтобы macOS не пугался Application Support.
-
-# ===========================
-# Темы (кастомные, лежат в ~/.config/ghostty/themes/)
-# ===========================
-# Всегда чёрная тема — без переключения по системному режиму macOS.
-# Для настоящего true black на XDR заменишь на XDRBlack (нужен opacity = 1.0).
-theme = GrayBlack
-
-# ===========================
-# Шрифт
-# ===========================
 font-family = JetBrainsMonoNL Nerd Font
 font-size = 16
 
-# ===========================
-# Фон: прозрачность + блюр (паритет с Alacritty).
-# При opacity < 1.0 XDR true-black не работает; если переключишься на XDRBlack
-# и захочешь чтобы пиксели реально гасились — поставь opacity = 1.0 и убери блюр.
-# ===========================
-background-opacity = 0.75
-background-blur-radius = 20
+theme = Gruvbox Dark Hard
 
-# ===========================
-# Окно
-# ===========================
+# Прозрачный чёрный фон + блюр для красивого псевдо-glass эффекта.
+background = #111111
+background-opacity = 0.8
+background-blur = 30
+
+# Убираем macOS title bar — чистый минимальный look.
+# Скруглённые углы остаются (в отличие от window-decoration=none).
+# Светофор-кнопки тоже скрыты; закрывать через cmd+q, тащить opt+click.
+macos-titlebar-style = hidden
+
 window-padding-x = 24
 window-padding-y = 12
 window-padding-balance = true
@@ -31,44 +20,31 @@ window-width = 160
 window-height = 50
 confirm-close-surface = false
 
-# Нативный macOS titlebar: AppKit сам прячет tab bar при одной вкладке
-# и показывает при двух и более. В fullscreen титульная полоса
-# скрывается системой — никакого «всратого» хедера сверху не будет.
-# Альтернативы: `tabs` (интегрированные табы, всегда видны),
-#               `transparent`, `hidden`.
-macos-titlebar-style = native
-
-# Запоминать размер и позицию окна между запусками.
 window-save-state = always
 
-# Сглаживание скролла:
-#   precision — для трекпада (дефолт 1)
-#   discrete  — для колеса мыши (дефолт 3, отсюда «рывки» по 3 строки)
-mouse-scroll-multiplier = precision:0.3,discrete:1
-
-# ===========================
-# Старая тема (на всякий случай — раскомментируй, если захочешь вернуть)
-# 🌊 Midnight Ocean — синеватый фон
-# ===========================
-# background = #1a1b2e
-# foreground = #e0def4
-# cursor-color = #f6c177
-# cursor-style = block
-# selection-background = #393552
-# selection-foreground = #e0def4
-# palette = 0=#26233a
-# palette = 1=#eb6f92
-# palette = 2=#9ccfd8
-# palette = 3=#f6c177
-# palette = 4=#c4a7e7
-# palette = 5=#ea9a97
-# palette = 6=#3e8fb0
-# palette = 7=#e0def4
-# palette = 8=#6e6a86
-# palette = 9=#eb6f92
-# palette = 10=#9ccfd8
-# palette = 11=#f6c177
-# palette = 12=#c4a7e7
-# palette = 13=#ea9a97
-# palette = 14=#3e8fb0
-# palette = 15=#e0def4
+# Отключаем встроенные табы Ghostty — таб-менеджер у нас тмукс (prefix C-a).
+# unbind возвращает клавишу в shell, чтобы tmux/cli мог её перехватить.
+keybind = super+t=unbind
+keybind = super+shift+[=unbind
+keybind = super+shift+]=unbind
+keybind = super+alt+w=unbind
+keybind = ctrl+tab=unbind
+keybind = ctrl+shift+tab=unbind
+keybind = super+digit_1=unbind
+keybind = super+digit_2=unbind
+keybind = super+digit_3=unbind
+keybind = super+digit_4=unbind
+keybind = super+digit_5=unbind
+keybind = super+digit_6=unbind
+keybind = super+digit_7=unbind
+keybind = super+digit_8=unbind
+keybind = super+digit_9=unbind
+keybind = super+1=unbind
+keybind = super+2=unbind
+keybind = super+3=unbind
+keybind = super+4=unbind
+keybind = super+5=unbind
+keybind = super+6=unbind
+keybind = super+7=unbind
+keybind = super+8=unbind
+keybind = super+9=unbind

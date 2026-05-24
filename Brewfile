@@ -19,6 +19,7 @@ brew "jq"
 brew "gh"
 brew "git"
 brew "coreutils"
+brew "node"
 
 # Fonts (Ghostty config pins JetBrainsMonoNL Nerd Font)
 cask "font-jetbrains-mono-nerd-font"
