@@ -1,17 +1,18 @@
 font-family = JetBrainsMonoNL Nerd Font
-font-size = 16
+font-size = 20
 
-theme = Gruvbox Dark Hard
+# Утолщение глифов (нельзя задать только для светлой темы — опция глобальная,
+# но заметнее всего помогает именно на белом фоне). Сила: font-thicken-strength 0..255.
+font-thicken = true
 
-# Прозрачный чёрный фон + блюр для красивого псевдо-glass эффекта.
-background = #111111
-background-opacity = 0.8
-background-blur = 30
+# Авто-переключение по системной теме macOS (светлая/тёмная).
+theme = light:Rose Pine Dawn,dark:Rose Pine
 
-# Убираем macOS title bar — чистый минимальный look.
-# Скруглённые углы остаются (в отличие от window-decoration=none).
-# Светофор-кнопки тоже скрыты; закрывать через cmd+q, тащить opt+click.
-macos-titlebar-style = hidden
+# Полностью непрозрачный фон (берётся из активной темы).
+background-opacity = 1.0
+
+# Встроенный таб-бар в тайтлбаре — компактный look, табы работают.
+macos-titlebar-style = tabs
 
 window-padding-x = 24
 window-padding-y = 12
@@ -22,29 +23,5 @@ confirm-close-surface = false
 
 window-save-state = always
 
-# Отключаем встроенные табы Ghostty — таб-менеджер у нас тмукс (prefix C-a).
-# unbind возвращает клавишу в shell, чтобы tmux/cli мог её перехватить.
-keybind = super+t=unbind
-keybind = super+shift+[=unbind
-keybind = super+shift+]=unbind
-keybind = super+alt+w=unbind
-keybind = ctrl+tab=unbind
-keybind = ctrl+shift+tab=unbind
-keybind = super+digit_1=unbind
-keybind = super+digit_2=unbind
-keybind = super+digit_3=unbind
-keybind = super+digit_4=unbind
-keybind = super+digit_5=unbind
-keybind = super+digit_6=unbind
-keybind = super+digit_7=unbind
-keybind = super+digit_8=unbind
-keybind = super+digit_9=unbind
-keybind = super+1=unbind
-keybind = super+2=unbind
-keybind = super+3=unbind
-keybind = super+4=unbind
-keybind = super+5=unbind
-keybind = super+6=unbind
-keybind = super+7=unbind
-keybind = super+8=unbind
-keybind = super+9=unbind
+# Помедленнее колесо мыши (дефолт 3.0)
+mouse-scroll-multiplier = 0.3

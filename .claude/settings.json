@@ -5,7 +5,7 @@
   },
   "effortLevel": "xhigh",
   "skipDangerousModePermissionPrompt": true,
-  "theme": "dark",
+  "theme": "auto",
   "terminalProgressBarEnabled": false,
   "agentPushNotifEnabled": true
 }
