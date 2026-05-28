@@ -23,5 +23,5 @@ confirm-close-surface = false
 
 window-save-state = always
 
-# Помедленнее колесо мыши (дефолт 3.0)
-mouse-scroll-multiplier = 0.3
+# Скорость колеса мыши (дефолт 3.0)
+mouse-scroll-multiplier = 1.0
