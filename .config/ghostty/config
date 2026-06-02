@@ -6,7 +6,9 @@ font-size = 20
 font-thicken = true
 
 # Авто-переключение по системной теме macOS (светлая/тёмная).
-theme = light:Rose Pine Dawn,dark:Rose Pine
+# Тёмная — кастомная Rose Pine Black (палитра Rose Pine + чисто чёрный фон),
+# файл лежит в themes/ рядом с этим конфигом.
+theme = light:GitHub Light Default,dark:Rose Pine Black
 
 # Полностью непрозрачный фон (берётся из активной темы).
 background-opacity = 1.0
