@@ -3,9 +3,17 @@
     "type": "command",
     "command": "bash /Users/billy/.claude/statusline.sh"
   },
+  "env": {
+    "HTTP_PROXY": "http://127.0.0.1:2080",
+    "HTTPS_PROXY": "http://127.0.0.1:2080",
+    "NO_PROXY": "localhost,127.0.0.1,::1"
+  },
   "effortLevel": "xhigh",
   "skipDangerousModePermissionPrompt": true,
   "theme": "auto",
   "terminalProgressBarEnabled": false,
-  "agentPushNotifEnabled": true
+  "agentPushNotifEnabled": true,
+  "enabledPlugins": {
+    "rust-analyzer-lsp@claude-plugins-official": true
+  }
 }
